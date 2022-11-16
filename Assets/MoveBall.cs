@@ -18,6 +18,6 @@ public class MoveBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = gameObject.transform.position + _speed * (_direction.normalized);
+        gameObject.transform.position = gameObject.transform.position + _speed * (_direction.normalized)*Time.deltaTime;
     }
 }
