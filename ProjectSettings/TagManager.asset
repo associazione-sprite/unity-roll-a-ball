@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Pickup
+  - Wall
   layers:
   - Default
   - TransparentFX
