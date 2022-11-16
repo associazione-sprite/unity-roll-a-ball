@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class DestroyOnBall : MonoBehaviour
+public class DetectTrigger : MonoBehaviour
 {
+
+    public UnityEvent<Collider> CollisionEvent = new UnityEvent<Collider>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +21,7 @@ public class DestroyOnBall : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball")
-        {
-            Destroy(gameObject.transform.parent.gameObject);
-        }
+        CollisionEvent.Invoke(other);
     }
 
 }
