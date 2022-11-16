@@ -19,6 +19,7 @@ public class DetectTrigger : MonoBehaviour
     {
         
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         CollisionEvent.Invoke(other);

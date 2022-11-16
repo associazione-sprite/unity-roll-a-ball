@@ -747,10 +747,12 @@ GameObject:
   - component: {fileID: 994880510}
   - component: {fileID: 994880509}
   - component: {fileID: 994880508}
+  - component: {fileID: 994880514}
   - component: {fileID: 994880512}
   - component: {fileID: 994880513}
-  - component: {fileID: 994880514}
   - component: {fileID: 994880515}
+  - component: {fileID: 994880516}
+  - component: {fileID: 994880517}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -887,6 +889,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5088ccb3c0cd754cb30102b290b5873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &994880516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994880507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c5e356cfc49a148b8d5db34b839881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &994880517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994880507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940e6cd34226403498de77f871fb5d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1181682860
 GameObject:
   m_ObjectHideFlags: 0

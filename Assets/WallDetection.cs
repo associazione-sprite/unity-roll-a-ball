@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WallDetection : MonoBehaviour
 {
     private MoveBall _movement;
+    public UnityEvent WallHitEvent = new UnityEvent();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,7 @@ public class WallDetection : MonoBehaviour
     {
         if(collision.gameObject.tag == "Wall")
         {
-            _movement.Direction = _movement.Direction * -1;
+            WallHitEvent.Invoke();
         }
     }
 }
