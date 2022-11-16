@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class MoveBall : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed = 0.1f;
-    [SerializeField]
-    private Vector3 _direction = new Vector3(1, 0, 0);
-
+    public float Speed { get; set; }
+    public Vector3 Direction { get; set; }
     // Start is called before the first frame update
     void Start()
     {
-        
+        Direction = new Vector3(0, 0, 0);
+        Speed = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = gameObject.transform.position + _speed * (_direction.normalized)*Time.deltaTime;
+        gameObject.transform.position = gameObject.transform.position + Speed * (Direction.normalized)*Time.deltaTime;
     }
 }
