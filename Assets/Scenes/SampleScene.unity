@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 994880513}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 1181682862}
   m_Layer: 0
   m_Name: Pickup
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,9 +574,10 @@ GameObject:
   - component: {fileID: 1495131681}
   - component: {fileID: 1495131680}
   - component: {fileID: 1495131679}
+  - component: {fileID: 1495131683}
   m_Layer: 0
   m_Name: PickupShape
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,3 +658,15 @@ Transform:
   m_Father: {fileID: 1181682861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
+--- !u!114 &1495131683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495131678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940e6cd34226403498de77f871fb5d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
