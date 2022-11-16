@@ -6,6 +6,7 @@ public class MoveBall : MonoBehaviour
 {
     public float Speed { get; set; }
     public Vector3 Direction { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
