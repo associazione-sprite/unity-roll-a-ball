@@ -7,7 +7,9 @@ using Random = System.Random;
 public class InputManager : MonoBehaviour
 {
     private MoveBall _movement;
-    private bool move = false;
+    [SerializeField]
+    private float _defaultSpeed = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,19 +23,25 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            move = !move;
-            if (move)
-            {
-                var random = new Random();
-                _movement.Direction = new Vector3(random.Next(-1,2), 0, random.Next(-1, 2));
-                _movement.Speed = 0.5f;
-            }
-            else
-            {
-                _movement.Speed = 0;
-            }
+            _movement.Direction = Vector3.forward;
+            _movement.Speed = _defaultSpeed;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            _movement.Direction = Vector3.left;
+            _movement.Speed = _defaultSpeed;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            _movement.Direction = Vector3.back;
+            _movement.Speed = _defaultSpeed;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            _movement.Direction = Vector3.right;
+            _movement.Speed = _defaultSpeed;
         }
     }
 }

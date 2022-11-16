@@ -6,7 +6,6 @@ public class MoveBall : MonoBehaviour
 {
     public float Speed { get; set; }
     public Vector3 Direction { get; set; }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +16,10 @@ public class MoveBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = gameObject.transform.position + Speed * (Direction.normalized)*Time.deltaTime;
+        if(Speed != 0)
+        {
+            gameObject.transform.position = gameObject.transform.position + Speed * Direction.normalized * Time.deltaTime;
+        }
     }
+        
 }
