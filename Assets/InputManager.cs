@@ -23,25 +23,29 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        _movement.Direction = Vector3.zero;
+        _movement.Speed = 0;
+
+        if (Input.GetKey(KeyCode.W))
         {
             _movement.Direction = Vector3.forward;
             _movement.Speed = _defaultSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             _movement.Direction = Vector3.left;
             _movement.Speed = _defaultSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             _movement.Direction = Vector3.back;
             _movement.Speed = _defaultSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             _movement.Direction = Vector3.right;
             _movement.Speed = _defaultSpeed;
         }
+
     }
 }
