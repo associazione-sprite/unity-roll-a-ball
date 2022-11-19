@@ -7,12 +7,15 @@ public class MoveBall : MonoBehaviour
 {
     public float Speed { get; set; }
     public Vector3 Direction { get; set; }
+
+    private Rigidbody _rigidbody;
     // Start is called before the first frame update
     void Start()
     {
         Direction = new Vector3(0, 0, 0);
         Speed = 0;
         this.gameObject.GetComponent<WallDetection>().WallHitEvent.AddListener(() => WallHit());
+        _rigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
     private void WallHit()
@@ -21,11 +24,11 @@ public class MoveBall : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Speed != 0)
         {
-            gameObject.transform.position = gameObject.transform.position + Speed * Direction.normalized * Time.deltaTime;
+            _rigidbody.AddForce(Direction * Speed);
         }
     }
         
