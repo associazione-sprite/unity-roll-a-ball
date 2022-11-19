@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Random = System.Random;
 
 public class InputManager : MonoBehaviour
@@ -20,32 +21,17 @@ public class InputManager : MonoBehaviour
         }
     }
 
+
+    private void OnMove(InputValue moveValue)
+    {
+        var move2d = moveValue.Get<Vector2>();
+        _movement.Direction = new Vector3(move2d.x, 0, move2d.y);
+        _movement.Speed = _defaultSpeed;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        _movement.Direction = Vector3.zero;
-        _movement.Speed = 0;
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            _movement.Direction = Vector3.forward;
-            _movement.Speed = _defaultSpeed;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            _movement.Direction = Vector3.left;
-            _movement.Speed = _defaultSpeed;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            _movement.Direction = Vector3.back;
-            _movement.Speed = _defaultSpeed;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _movement.Direction = Vector3.right;
-            _movement.Speed = _defaultSpeed;
-        }
-
+      
     }
 }
