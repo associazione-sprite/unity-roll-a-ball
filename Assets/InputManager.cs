@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour
     private MoveBall _movement;
     [SerializeField]
     private float _defaultSpeed = 0.5f;
+    [SerializeField]
+    private CameraController _cameraController;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +23,17 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    private void OnLook(InputValue lookValue)
+    {
+        var look2d = lookValue.Get<Vector2>();
+        this._cameraController.OnLook(look2d);
+    }
 
     private void OnMove(InputValue moveValue)
     {
+        
         var move2d = moveValue.Get<Vector2>();
-        _movement.Direction = new Vector3(move2d.x, 0, move2d.y);
+        _movement.Direction = move2d.x * _cameraController.transform.right + move2d.y * _cameraController.transform.forward;
         _movement.Speed = _defaultSpeed;
     }
 
