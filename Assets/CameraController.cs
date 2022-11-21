@@ -19,6 +19,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = player.transform.position + (transform.rotation * offset);
+        
     }
 
     internal void OnLook(Vector2 look2d)

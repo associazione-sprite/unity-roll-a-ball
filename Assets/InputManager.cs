@@ -33,7 +33,9 @@ public class InputManager : MonoBehaviour
     {
         
         var move2d = moveValue.Get<Vector2>();
-        _movement.Direction = move2d.x * _cameraController.transform.right + move2d.y * _cameraController.transform.forward;
+        var cameraForward = Quaternion.AngleAxis(-_cameraController.transform.rotation.eulerAngles.x, _cameraController.transform.right) * _cameraController.transform.forward;
+        var cameraRight = Quaternion.AngleAxis(-_cameraController.transform.rotation.eulerAngles.z, _cameraController.transform.forward) * _cameraController.transform.right;
+        _movement.Direction = move2d.x * cameraRight + move2d.y * cameraForward;
         _movement.Speed = _defaultSpeed;
     }
 
