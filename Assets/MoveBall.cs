@@ -21,5 +21,13 @@ public class MoveBall : MonoBehaviour
             gameObject.transform.position = gameObject.transform.position + Speed * Direction.normalized * Time.deltaTime;
         }
     }
-        
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            Speed = - Speed;
+        }
+    }
+
 }
